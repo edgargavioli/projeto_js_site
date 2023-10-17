@@ -18,11 +18,13 @@ fetch(url)
     })
     .then(data => {
         data.result.forEach(element => {
+            let p = document.querySelector(".description")
             let nome = element.nome_curso
             let option = document.createElement('option')
             option.value = removerAcentos(nome.toLowerCase())
             option.innerHTML = nome
-
+            p.innerHTML += `• ${nome}<br>`
+            
             select.appendChild(option)
         });
     })
