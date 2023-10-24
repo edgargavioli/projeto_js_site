@@ -17,7 +17,7 @@ fetch(url_professor)
             let p_professor = document.createElement('p')
             let p_materia = document.createElement('p')
             let div_box = document.createElement('div')
-            div_box.classList.add("box"+i)
+            div_box.classList.add("box"+2)
             let imagem = document.createElement("img")
             imagem.src = element.img
             imagem.classList.add("img-profile")

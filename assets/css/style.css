@@ -354,8 +354,9 @@ span{
     color: var(--blue);
     font-weight: var(--fw-400);
 }
-.redes-img img{
+.redes-img a img{
     width: 25%;
+    margin: 3px;
 }
 
 /* TERCEIRA PAGINA (METODOLOGIA) */
