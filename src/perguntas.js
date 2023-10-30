@@ -44,14 +44,3 @@ fetch(url_perguntas)
     .catch(error =>{
         console.error("ERRO: ", error)
     })
-
-    /*
-    <div class="accordion">
-                    <div class="accordion__question">
-                        <p>+ O que é o Centro de Línguas?</p>
-                    </div>
-                    <div class="accordion__answer">
-                        <p>O Centro de Línguas é uma instituição de ensino inserida dentro do Biopark Educação e tem como propósito possibilitar o acesso ao ensino de idiomas aos colaboradores do Biopark, alunos do Biopark Educação e à comunidade em geral.</p>
-                    </div>
-                </div>
- */
