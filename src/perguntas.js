@@ -1,4 +1,4 @@
-const url_perguntas = "https://7ajo5cpv.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%27perguntas_frequentes%27%5D%7B%0A++%27pergunta%27%3A+pergunta%2C%0A++++%27resposta%27%3A+resposta%0A%7D"
+const url_perguntas = "https://7ajo5cpv.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%27perguntas_frequentes%27%5D%7B%0A++pergunta%2C%0A++++resposta%0A%7D"
 
 const div_layout = document.querySelector(".layout")
 
@@ -22,7 +22,7 @@ fetch(url_perguntas)
             div_question.classList.add("accordion__question")
             div_answer.classList.add("accordion__answer")
             
-            pergunta.innerText = $`+ ${element.pergunta} ?`
+            pergunta.innerText = `+ ${element.pergunta} ?`
             div_question.appendChild(pergunta)
             resposta.innerHTML = element.resposta
             div_answer.appendChild(resposta)
