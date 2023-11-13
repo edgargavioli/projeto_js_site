@@ -8,34 +8,38 @@ fetch(url_perguntas)
             throw new Error("FALHA NA REQUISIÇÃO")
         }
 
-        return response.json();
+        return response.json()
     })
     .then(data => {
         data.result.forEach(element => {
             let div_accordion = document.createElement("div")
-            let pergunta = document.createElement('p')
-            let resposta = document.createElement('p')
+            let pergunta = document.createElement("p")
+            let resposta = document.createElement("p")
             let div_question = document.createElement("div")
+            let div_answer = document.createElement("div")
+            
             div_accordion.classList.add("accordion")
             div_question.classList.add("accordion__question")
-            let div_answer = document.createElement("div")
             div_answer.classList.add("accordion__answer")
-            pergunta.innerHTML = "+ "+element.pergunta+"?";
+            
+            pergunta.innerText = $`+ ${element.pergunta} ?`
             div_question.appendChild(pergunta)
             resposta.innerHTML = element.resposta
             div_answer.appendChild(resposta)
             div_accordion.appendChild(div_question)
             div_accordion.appendChild(div_answer)
             div_layout.appendChild(div_accordion)
-        });
-        let answers = document.querySelectorAll(".accordion");
+        })
+
+        let answers = document.querySelectorAll(".accordion")
+        
         answers.forEach((event) => {
-            event.addEventListener('click', () => {
+            event.addEventListener("click", () => {
                 if (event.classList.contains("active")) {
-                    event.classList.remove("active");
+                    event.classList.remove("active")
                 }
                 else {
-                    event.classList.add("active");
+                    event.classList.add("active")
                 }
             })
         })

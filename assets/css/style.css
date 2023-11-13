@@ -56,10 +56,6 @@ body{
     min-height: 100vh;
 }
 
-ul {
-    /* list-style: none; */
-}
-
 /* HEADER */
 
 header{
@@ -302,6 +298,7 @@ span{
     font-size: var(--fs-20);
     font-weight: var(--fw-800);
     color: var(--blue);
+    margin-bottom: 5%;
 }
 
 .description{

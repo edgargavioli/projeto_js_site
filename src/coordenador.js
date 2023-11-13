@@ -8,14 +8,25 @@ fetch(url_coordenadores)
             throw new Error("FALHA NA REQUISIÇÃO")
         }
 
-        return response.json();
+        return response.json()
     })
     .then(data => {
         let element = data.result[0]
-        let imagem = document.createElement('img')
+        let imagem = document.createElement("img")
+        let bpk_img = document.createElement("img")
+        let p = document.createElement("p")
+        bpk_img.src = "./assets/img/logos/biopark.png"
         imagem.src = element.imagem
+        imagem.alt = element.nome
+        imagem.style = "width: 75%;"
+
+        p.innerHTML = element.nome
+        p.classList.add("name")
+        bpk_img.classList.add("biopark-logo")
 
         main__img.appendChild(imagem)
+        main__img.appendChild(bpk_img)
+        main__img.appendChild(p)
         
     })
     .catch(error =>{

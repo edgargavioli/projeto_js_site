@@ -24,8 +24,14 @@ fetch(url_avaliacoes)
             let div_box_top = document.createElement("div")
             let div_profile = document.createElement("div")
             let div_comentario = document.createElement("div")
+            let img = document.createElement("img")
             let p = document.createElement("p")
-            
+            let strong = document.createElement("strong")
+            let span = document.createElement("span")
+            let i = 5;
+
+            i -= element.nota
+
             div_profile_img.classList.add("profile-img")
             div_name_user.classList.add("name-user")
             div_box_top.classList.add("box-top")
@@ -34,15 +40,35 @@ fetch(url_avaliacoes)
             div_comentario.classList.add("client-comment")
             testimonial_box.classList.add("testimonial-box")
             
-            div_profile_img.innerHTML = `<img src="${element.img}" alt="Foto de perfil do avaliador">`
-            div_name_user.innerHTML = `<strong>${element.nome}</strong>
-            <span>${element.perfil}</span>
-            <div class="box-estrela"></div>`
+            strong.innerText = element.nome
+            span.innerText = `@${element.perfil}`
+
+            img.src = element.img
+            img.alt = "Foto de perfil do avaliador"
+            
+            div_profile_img.appendChild(img)
+            div_name_user.appendChild(strong)
+            div_name_user.appendChild(span)
+            div_name_user.appendChild(div_box_estrela)
+
             while(element.nota > 0){
-                div_box_estrela.innerHTML += `<i class="fas fa-star"></i>`
+                let star = document.createElement("i")
+                star.classList.add("fa")
+                star.classList.add("fa-star")
+                div_box_estrela.appendChild(star)
                 element.nota--
             }
-            p.innerHTML = `${element.texto}`
+
+            while(i>0){
+                let star = document.createElement("i")
+                star.classList.add("far")
+                star.classList.add("fa-star")
+                star.style.color = "grey"
+                div_box_estrela.appendChild(star)
+                i--
+            }
+
+            p.innerHTML = element.texto
             
             div_profile.appendChild(div_profile_img)
             div_profile.appendChild(div_name_user)

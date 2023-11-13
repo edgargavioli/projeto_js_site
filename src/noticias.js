@@ -5,19 +5,19 @@ const noticiasContainer = document.querySelector(".redes-img");
  // Realiza uma solicitação GET para a URL da API
 fetch(URL_NOTICIAS, { method: "GET" }) 
     .then(response => {
-        return response.json(); // Converte a resposta em formato JSON
+        return response.json() // Converte a resposta em formato JSON
     })
     .then(data => {
         
       
         data.result.forEach(element => {
-          const imgElement = document.createElement("img");
-          const imga = document.createElement("a");
-          imga.href = element.link;
-          imgElement.src = element.img;
+          const imgElement = document.createElement("img")
+          const img = document.createElement("a")
+          img.href = element.link;
+          imgElement.src = element.img
           imgElement.classList.add("redes-img")
-          imga.appendChild(imgElement);
-          noticiasContainer.appendChild(imga);
+          img.appendChild(imgElement)
+          noticiasContainer.appendChild(img)
 
         });
       })
