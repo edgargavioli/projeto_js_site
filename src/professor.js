@@ -1,4 +1,4 @@
-const url_professor = "https://7ajo5cpv.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%27professor%27%5D%7B%0A++%27nome%27%3A+nome%2C%0A++++%27disciplina%27%3Adisciplina%2C%0A++++%27img%27%3A+imagem_professor.asset-%3Eurl%0A%7D%0A"
+const url_professor = "https://7ajo5cpv.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%27professor%27%5D%7B%0A++%22nome%22%3A+nome%2C%0A++++%22disciplina%22%3A+disciplina%2C%0A++++%22img%22%3A+imagem_professor.asset-%3Eurl%0A%7D%5B0..6%5D%0A"
 const caixas = document.querySelector(".caixas")
 
 fetch(url_professor)
@@ -10,7 +10,7 @@ fetch(url_professor)
         return response.json();
     })
     .then(data => {
-        let i = 1
+        
         data.result.forEach(element => {
             let nome = element.nome
             let materia = element.disciplina
@@ -30,7 +30,7 @@ fetch(url_professor)
             div_box.appendChild(p_materia)
 
             caixas.appendChild(div_box)
-            i++
+            
         });
     })
     .catch(error =>{

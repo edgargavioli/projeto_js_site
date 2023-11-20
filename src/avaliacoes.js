@@ -1,4 +1,4 @@
-const url_avaliacoes = 'https://7ajo5cpv.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%27avaliacao%27%5D%7B%0A++%27nome%27%3A+nome%2C%0A++++%27nota%27%3A+nota%2C%0A++++%27texto%27%3A+texto%2C%0A++++%27perfil%27%3A+perfil_insta%2C%0A++++%27img%27%3A+img.asset-%3Eurl%0A%7D'
+const url_avaliacoes = "https://7ajo5cpv.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%27avaliacao%27%5D%7B%0A++%27nome%27%3A+nome%2C%0A++++%27nota%27%3A+nota%2C%0A++++%27texto%27%3A+texto%2C%0A++++%27perfil%27%3A+perfil_insta%2C%0A++++%27img%27%3A+img.asset-%3Eurl%0A%7D%5B0..6%5D"
 
 const container_aval = document.querySelector("#avaliacoes")
 const testimonial = document.createElement("div")
